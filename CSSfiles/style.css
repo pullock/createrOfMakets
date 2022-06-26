@@ -1,0 +1,728 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -ms-user-select: none; 
+    -moz-user-select: none; 
+    -khtml-user-select: none; 
+    -webkit-user-select: none;
+}
+
+#fonLocation {
+    background-color: hsla(0, 0%, 88%, 1);
+    overflow: auto;
+    height: auto;
+    width: auto;
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+#workField {
+    background-color: hsla(0, 0%, 100%, 1);
+    border: 1px solid hsla(0, 0%, 80%, 1);
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    overflow: hidden;
+}
+
+#flexGrid {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.column {
+    width: 88px;
+    height: 100%;
+    margin: 0 8px;
+    background-color: hsla(281, 89%, 75%, 0.2);
+    display: none;
+}
+
+#leftMenu {
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: hsla(218, 28%, 16%, 1);
+    z-index: 10;
+    border-right: 1px solid hsla(0, 0%, 88%, 1);
+}
+
+#rightMenu {
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: hsla(218, 28%, 16%, 1);
+    z-index: 10;
+    border-left: 1px solid hsla(0, 0%, 88%, 1);
+}
+
+#topPanel {
+    width: 100%;
+    height: auto;
+    padding: 5px 20px;
+    left: 220px;
+    top: 0;
+    position: fixed;
+    z-index: 10;
+    background-color: hsla(218, 28%, 16%, 1);
+    display: flex;
+    padding-right: 410px;
+}
+
+.topPart:first-child {
+    width: 20%;
+    height: auto;
+    padding-top: 8px;
+}
+
+.topPart:last-child {
+    padding: 5px 0;
+    text-align: left;
+    width: 25%;
+    height: auto;
+    color: hsla(0, 0%, 100%, 1);
+    display: flex;
+}
+
+.topPart:nth-child(2) {
+    text-align: center;
+    width: 45%;
+    height: auto;
+    padding: 5px 0;
+    padding-left: 100px;
+    
+}
+
+#addNewProject {
+    width: 10px;
+    height: 10px;
+    transform: scale(2.5);
+}
+
+#addNewProject:hover {
+    cursor: pointer;
+    transform: scale(3);
+}
+
+#nameFile, #editName, #newProject {
+    color: hsla(0, 0%, 100%, 1);
+}
+
+.topLink {
+    padding-top: 3px;
+    color: hsla(0, 0%, 100%, 1);
+}
+
+.topLink:nth-child(2) {
+    padding-top: 3px;
+    color: hsla(258, 100%, 70%, 1)
+}
+
+.topLink:hover {
+    cursor: pointer;
+    color: hsla(25, 89%, 39%, 1);
+}
+
+#editName:hover {
+    color: hsla(25, 89%, 39%, 1);
+    cursor: pointer;
+}
+
+.sizeTextName {
+    width: 100%;
+    padding: 8px 10px;
+    background-color: hsla(0, 0%, 100%, 0.5);
+    border: none;
+    border-radius: 8px;
+    color: hsla(0, 0%, 100%, 1);
+}
+
+#plusSize {
+    margin-left: 27px;
+}
+
+#plusSize, #minusSize {
+    font-size: 24px;
+    width: 40px;
+    text-align: center;
+}
+
+#plusSize img, #minusSize img {
+    border-radius: 50%;
+}
+
+#plusSize:hover img, #minusSize:hover img {
+    transform: scale(1.2);
+}
+
+#plusSize:hover, #minusSize:hover {
+    cursor: pointer;
+    color: hsla(25, 89%, 39%, 1);
+}
+
+#getSize {
+    padding-top: 4px;
+    width: 50px;
+    text-align: center;
+    
+}
+
+#topBlockLeftMenu {
+    width: 100%;
+    height: 100px;
+    padding-top: 60px;
+    text-align: center;
+    font-size: 26px;
+    color: hsla(0, 0%, 100%, 1);
+}
+
+.buttonLeftMenu {
+    width: 100%;
+    padding: 10px 10px;
+    font-size: 14px;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    color: hsla(0, 0%, 100%, 1);
+    background-color: hsla(223, 7%, 31%, 0.3);
+    border-bottom: 1px solid hsla(222, 11%, 15%, 1);
+}
+
+.buttonLeftMenu img {
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.buttonLeftMenu:hover {
+    cursor: pointer;
+    background-color: hsla(223, 7%, 25%, 0.1);
+    color: hsla(258, 100%, 70%, 1);
+}
+
+ input[type='range'] {
+    overflow: hidden;
+    width: 120px;
+    height: 15px;
+    -webkit-appearance: none;
+    background-color: hsla(0, 0%, 100%, 1);
+    margin-top: 7px;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+    height: 20px;
+    -webkit-appearance: none;
+    color: #13bba4;
+    margin-top: -1px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    width: 20px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    height: 20px;
+    background: hsla(220, 43%, 11%, 0.5);
+}
+
+input[type="range"]::-moz-range-progress {
+        background-color: hsla(0, 0%, 100%, 1);
+}
+input[type="range"]::-moz-range-track {  
+    background-color: hsla(0, 0%, 100%, 1);
+}
+input[type="range"]::-ms-fill-lower {
+    background-color: hsla(0, 0%, 100%, 1); 
+}
+input[type="range"]::-ms-fill-upper {  
+    background-color: hsla(0, 0%, 100%, 1);
+}
+
+#rightTopBlock {
+    width: 100%;
+    height: auto;
+    padding: 25px 30px;
+}
+
+#rightBottomBlock {
+    width: 100%;
+    height: auto;
+    padding: 10px 20px;
+}
+
+#firstBlockRight {
+    width: 100%;
+    height: auto;
+    color: hsla(0, 0%, 100%, 1);
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+.tipe {
+    height: 30px;
+    width: 100%;
+}
+
+.displayWrap {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+}
+
+.colorRound:nth-child(1) {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: hsla(0, 0%, 100%, 1);
+    margin: 5px;
+}
+
+.colorRound:nth-child(2) {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: hsla(232, 10%, 84%, 1);
+    margin: 5px;
+}
+
+.colorRound:nth-child(3) {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: hsla(229, 8%, 73%, 1);
+    margin: 5px;
+}
+
+.colorRound:nth-child(4) {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: hsla(223, 7%, 51%, 1);
+    margin: 5px;
+}
+
+.colorRound:nth-child(5) {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: hsla(164, 82%, 47%, 1);
+    margin: 5px;
+}
+
+.colorRound:nth-child(6) {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: hsla(209, 100%, 63%, 1);
+    margin: 5px;
+}
+
+.colorRound:nth-child(7) {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: hsla(258, 100%, 70%, 1);
+    margin: 5px;
+}
+
+.colorRound:nth-child(8) {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: hsla(14, 100%, 59%, 1);
+    margin: 5px;
+}
+
+.colorRound:nth-child(9) {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: hsla(42, 100%, 52%, 1);
+    margin: 5px;
+}
+
+.colorRound:nth-child(10) {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: hsla(218, 28%, 16%, 1);
+    margin: 5px;
+    border: 2px solid hsla(258, 100%, 70%, 1);
+}
+
+.colorRound:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.line {
+    border-bottom: 3px solid hsla(0, 0%, 100%, 1);
+    width: 100%;
+    padding: 5px 0;
+    color: hsla(0, 0%, 100%, 1);
+    font-size: 14px;
+}
+
+.line2 {
+    border-bottom: 3px solid hsla(0, 0%, 100%, 1);
+    width: 100%;
+    padding: 5px 0;
+    color: hsla(0, 0%, 100%, 1);
+    font-size: 12px;
+}
+
+.line:first-child, .line2:first-child {
+    margin-top: 20px;
+}
+
+.textRadio {
+    color: hsla(0, 0%, 100%, 1);
+    font-size: 16px;
+    width: 80px;
+    height: auto;
+    padding-bottom: 15px;
+}
+
+.sizeCheck {
+    width: 50px;
+    padding: 4px 6px;
+    background-color: hsla(0, 0%, 100%, 0.5);
+    border: none;
+    border-radius: 5px;
+    color: hsla(0, 0%, 100%, 1);
+}
+
+#textName {
+    width: 150px;
+    padding: 4px 6px;
+    background-color: hsla(0, 0%, 100%, 0.3);
+    border: none;
+    border-radius: 5px;
+    color: hsla(0, 0%, 100%, 1);
+}
+
+.colorText {
+    color: hsla(0, 0%, 90%, 1);
+}
+
+.radioBlock {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid hsla(258, 100%, 70%, 1);
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-right: 5px;
+}
+
+.radioBlock:hover {
+    cursor: pointer;
+}
+
+.radioBlockInner {
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: hsla(0, 0%, 100%, 1);
+    display: none;
+}
+
+.radioBlockInner2 {
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: hsla(0, 0%, 100%, 1);
+    display: none;
+}
+
+.radioBlockType {
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: hsla(0, 0%, 100%, 1);
+    display: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flexWrap {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    overflow-y: scroll;
+    height: 170px;
+    width: 184px;
+}
+
+.flexWrap div {
+    margin: 5px;
+}
+
+.svgImages {
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.svgImages:hover .svgImagesColor {
+    fill: hsla(25, 89%, 39%, 1);
+}
+
+#buttonExport {
+    width: 180px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    border: 1px solid hsla(0, 0%, 100%, 1);
+    color: hsla(0, 0%, 100%, 1);
+    font-size: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#buttonExport:hover {
+    cursor: pointer;
+    border: 1px solid hsla(25, 89%, 39%, 1);
+}
+
+#buttonShare {
+    width: 180px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    color: hsla(0, 0%, 100%, 1);
+    font-size: 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    background-color: hsla(258, 100%, 70%, 1);
+}
+
+#buttonShare:hover {
+    cursor: pointer;
+    background-color: hsla(25, 89%, 39%, 1);
+}
+
+#openBut {
+    width: 150px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    color: hsla(0, 0%, 100%, 1);
+    font-size: 14px;
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color: hsla(258, 100%, 70%, 1);
+}
+
+#openBut:hover {
+    cursor: pointer;
+    background-color: hsla(25, 89%, 39%, 1);
+}
+
+#blockForButt {
+    position: fixed;
+    display: none;
+    right: 0;
+    bottom: 0;
+    width: 205px;
+    height: auto;
+    z-index: 30;
+    background-color: hsla(218, 28%, 16%, 1);
+    margin-right: 10px;
+}
+
+#rightBottomBlockHide {
+    height: 180px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#rightBottomBlockOnly {
+    margin-top: 60vh;
+}
+
+#rightBottomBlockPhotoPlus {
+    margin-top: 46vh;
+}
+
+#rightBottomBlockText {
+    padding: 10px 20px;
+    margin-top: 23px;
+}
+
+.buttonStandart {
+    width: 120px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid hsla(0, 0%, 70%, 1);
+}
+
+.boxBlock {
+    height: 100%;
+    display: flex;
+}
+
+.innerMass {
+    width: 100%;
+    height: auto;
+}
+
+.outBlockTop {
+    width: 100%;
+    height: 3px;
+    margin-bottom: 5px;
+    position: relative;
+}
+
+.outBlockBottom {
+    width: 100%;
+    height: 3px;
+    margin-top: 5px;
+    position: relative;
+}
+
+.outBlockLeft {
+    width: 3px;
+    margin-right: 5px;
+}
+
+.outBlockRight {
+    width: 3px;
+    margin-left: 5px;
+}
+
+.sqTopLeft {
+    position: absolute;
+    background-color: white;
+    border: 1px solid hsla(126, 100%, 38%, 0);
+    width: 10px;
+    Height: 10px;
+    left: -21px;
+    top: -10px;
+    display: none;
+}
+
+.sqTopLeft:hover {
+    cursor: move;
+}
+
+.sqTopRight {
+    position: absolute;
+    background-color: white;
+    border: 1px solid hsla(126, 100%, 38%, 0);
+    width: 10px;
+    Height: 10px;
+    right: -21px;
+    top: -10px;
+    display: none;
+}
+
+.sqTopRight:hover {
+    cursor: move;
+}
+
+.sqBotLeft {
+    position: absolute;
+    background-color: white;
+    border: 1px solid hsla(126, 100%, 38%, 0);
+    width: 10px;
+    Height: 10px;
+    left: -21px;
+    bottom: -10px;
+    display: none;
+}
+
+.sqBotLeft:hover {
+    cursor: move;
+}
+
+.sqBotRight {
+    position: absolute;
+    background-color: white;
+    border: 1px solid hsla(126, 100%, 38%, 0);
+    width: 10px;
+    Height: 10px;
+    right: -21px;
+    bottom: -10px;
+    display: none;
+}
+
+.sqBotRight:hover {
+    cursor: move;
+}
+
+/* ======================== СТИЛИ СОЗДАВАЕМЫХ ЭЛЕМЕНТОВ ================================= */
+
+.emptyTextElement {
+    padding: 5px 15px;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: hsla(0, 0%, 30%, 1);
+    border: 1px solid black;
+    font-size: 12px;
+}
+
+.placeForText {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+.newItem {
+    width: 100%;
+    height: auto;
+}
+
+.getHere {
+    width: 100%;
+    height: auto;
+}
+
+.emptyButtonElement {
+    padding: 5px 15px;
+    min-width: 140px;
+    min-height: 32px;
+    max-height: 56px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: hsla(0, 0%, 30%, 1);
+    border: 1px solid black;
+}
+
+.placeForTextBut {
+    width: 100%;
+    height: auto;
+}

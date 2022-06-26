@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="HTML">
+        <meta name="discription" content="Learn HTML">
+        <meta name="author" content="Peter Lastochkin">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="CSSfiles\style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css"/>
+        <title>Графический Редактор</title>
+    </head>
+    <body id="body">
+        <div id="fonLocation">
+            <div id="workField" onclick="workFieldSelect()">
+                <div id="flexGrid">
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                    <div class="column"></div>
+                </div>
+            </div>
+        </div>
+        <div id="topPanel">
+            <div class="topPart"><img src="IMGfiles\add.jpg" alt="" id="addNewProject">&#160;&#160;&#160;&#160;<span id="newProject">Создать новый макет</span></div>
+            <div class="topPart"><span id="nameFile">Название документа</span>&#160;<span id="editName" onclick="setNameDocument()">✎</span></div>
+            <div class="topPart"><input type="range" min="1" max="20" step="1" value="10" style="display: none" id="rangeSize" onchange="workFieldScale(document.querySelector('#rangeSize').value, '', '')"><div class="topLink">Поделиться</div>&#160;&#160;&#160;&#160;<div class="topLink">Экспорт</div><div id="plusSize" onclick="workFieldScale('', 1, '')"><img src="IMGfiles/plus.jpg" alt="plus" width="20px"></div>&#160;&#160;<div id="getSize"></div>&#160;&#160;<div id="minusSize" onclick="workFieldScale('', '', 1)"><img src="IMGfiles/minus.jpg" alt="plus" width="20px"></div></div>
+        </div>
+        <div id="leftMenu">
+            <div id="topBlockLeftMenu">Элементы</div>
+            <div class="buttonLeftMenu" onclick="selectTextButton(), selectButton(0), createElemButtonText()"><img src="IMGfiles/1.jpg" width="40px"><span>ТЕКСТ</span></div>
+            <div class="buttonLeftMenu" onclick="menuCreateButton(), createElemButton(), selectButton(1)"><img src="IMGfiles/2.jpg" width="40px"><span>КНОПКА</span></div>
+            <div class="buttonLeftMenu" onclick="createCheckBox(), selectButton(2)"><img src="IMGfiles/6.jpg" width="40px"><span>ЧЕКБОКС</span></div>
+            <div class="buttonLeftMenu" onclick="editRadioCheck(), selectButton(3)"><img src="IMGfiles/6.jpg" width="40px"><span>РАДИО КНОПКА</span></div>
+            <div class="buttonLeftMenu" onclick="editTextInputPlace(), selectButton(4)"><img src="IMGfiles/6.jpg" width="40px"><span>ПОЛЕ ВВОДА</span></div>
+            <div class="buttonLeftMenu" onclick="editIconMenu(), selectButton(5)"><img src="IMGfiles/5.jpg" width="40px"><span>ИКОНКА</span></div>
+            <div class="buttonLeftMenu" onclick="selectButton(6), editSwitchInputPlace()"><img src="IMGfiles/6.jpg" width="40px"><span>СВИТЧ</span></div>
+            <div class="buttonLeftMenu" onclick="editGroupOfLink(), selectButton(7)"><img src="IMGfiles/3.jpg" width="40px"><span>ВКЛАДКИ</span></div>
+            <div class="buttonLeftMenu" onclick="selectButton(8), editSelectInputPlace()"><img src="IMGfiles/4.jpg" width="40px"><span>МЕНЮ ВЫБОРА</span></div>
+        </div>
+        <div id="rightMenu">
+        </div>
+        <script src="JSfiles\mainFunction.js"></script>
+        <script src="JSfiles\menuContrl.js"></script>
+        <script src="JSfiles\useTuchScreen.js"></script>
+        <script>
+            $("#workField").draggable();
+            workFieldSize('laptop');
+        </script>
+    </body>
+</html>
